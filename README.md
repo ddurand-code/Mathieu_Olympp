@@ -1,27 +1,50 @@
-# Temperature Sensor
+# API "MyShop"
 
 ## Sujet 
 
 Bonjour !
-Afin d'avoir un apperçu de vos compétences, nous souhaitons avoir une API Rest répondant aux besoins suivants :
+Afin d'avoir un aperçu de vos compétences, nous souhaitons avoir une API répondant aux besoins suivants :
 
-1. Une route d'API qui relève la temperature d'un composant TemperatureCaptor et retourne les informations suivantes :
-  - Temperature : valeur de la température captée en °C.
-  - State : 
-    - "HOT" si la température captée est suppérieure ou égale a 30°C
-    - "COLD" si la température captée est inférieure a 19°C
-    - "WARM" si la température captée est suppérieure ou égale a 19°C et inférieure à 30°C
-  - Date : Date de relève de temperature
-2. Une route d'API qui permet d'afficher un historique des 15 dernières températures relevées en reprenant le retour de la route précédente.
-3. Une route pour redefinir les limites de temperatures pour les trois états : "HOT", "COLD" et "WARM".
+L'api doit nous permettre de gérer des offres qui doivent avoir les données suivantes :
+
+```JSON
+{
+  "ProductId": 42,
+  "ProductName": "T-Shirt",
+  "ProductBrand": "Sarenza",
+  "ProductSize": "M",
+  "Quantity": 100,
+  "Price": 42.42
+}
+```
+
+__routes :__
+- /api/offer/all -> Retourne la liste des offres
+- /api/offer/add -> Ajoute une nouvelle offre
+- /api/offer/update -> Modifie une offre existante
+
+## Data
+
+Le stockage des données doit être découpé de la façon suivante:
+
+- `dbo.product` : doit contenir un identifiant, un nom, une marque et une taille.
+- `dbo.price` : doit contenir un prix par produit.
+- `dbo.stock` : doit contenir une quantité par produit.
+
+L'idée serait d'avoir une centaine de lignes dans ces tables lors du démarrage de l'application.
+
 
 ## Couche technique obligatoire :
 - .NET 6
-- SQL Lite
+- Postgres (docker)
+- Dapper
 - Docker
 - Swagger
 
 Cette liste ne limite pas l'utilisation d'autres outils si vous pensez qu'ils sont un plus pour montrer votre savoir-faire.
 
+
 ## Rendu :
-Le rendu doit se faire via une Pull Request sur [GitHub](https://github.com/).
+- Le rendu doit se faire via une __Pull Request__ sur [GitHub](https://github.com/).
+
+- Il doit être possible de lancer l'API et la BDD en même temps via un docker-compose.
