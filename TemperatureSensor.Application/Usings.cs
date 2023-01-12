@@ -1,9 +1,0 @@
-﻿global using FluentValidation;
-global using MediatR;
-global using Microsoft.Extensions.DependencyInjection;
-global using System.Reflection;
-global using TemperatureSensor.Application.Behaviors;
-global using TemperatureSensor.Application.Commands;
-global using TemperatureSensor.Application.DTO;
-global using TemperatureSensor.Application.Queries;
-global using TemperatureSensor.Application.Services;
