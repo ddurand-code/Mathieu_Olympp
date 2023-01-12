@@ -1,0 +1,10 @@
+﻿global using MediatR;
+global using Microsoft.AspNetCore.Mvc;
+global using System.Net;
+global using TemperatureSensor.Application;
+global using TemperatureSensor.Application.Commands;
+global using TemperatureSensor.Application.DTO;
+global using TemperatureSensor.Application.Queries;
+global using TemperatureSensor.Infrastructure.ServicesExtension;
+global using TemperatureSensorAPI.MiddlewaresExtension;
+global using TemperatureSensorAPI.ServicesExtension;
